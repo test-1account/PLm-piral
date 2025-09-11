@@ -5,6 +5,7 @@ A comprehensive boilerplate for building PLM (Product Lifecycle Management) micr
 ## 🚀 Features
 
 ### Core Technologies
+
 - **Piral** - Microfrontend framework
 - **React 19** - UI library
 - **TypeScript** - Type safety
@@ -12,12 +13,15 @@ A comprehensive boilerplate for building PLM (Product Lifecycle Management) micr
 - **React Query** - Data fetching and caching
 
 ### State Management Options
+
 Choose your preferred state management solution:
+
 - **React Context** - Built-in React state management
 - **Redux Toolkit** - Predictable state container
 - **Zustand** - Lightweight state management
 
 ### Code Quality & Testing
+
 - **ESLint** - Code linting with TypeScript and React rules
 - **Prettier** - Code formatting
 - **Jest** - Testing framework
@@ -72,11 +76,13 @@ npm run build        # Build for production (when Piral is set up)
 ## 🔧 Setup Instructions
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Set up Piral (if not already done):**
+
    ```bash
    npm install -g piral-cli
    piral new my-piral-shell --target react
@@ -90,6 +96,7 @@ npm run build        # Build for production (when Piral is set up)
 ## 🏗️ State Management Usage
 
 ### React Context
+
 ```typescript
 import { AppProvider, useAppContext } from '@/state/context';
 
@@ -103,6 +110,7 @@ const { state, dispatch } = useAppContext();
 ```
 
 ### Redux Toolkit
+
 ```typescript
 import { Provider } from 'react-redux';
 import { reduxStore, useAppSelector, useAppDispatch } from '@/state/redux';
@@ -118,6 +126,7 @@ const dispatch = useAppDispatch();
 ```
 
 ### Zustand
+
 ```typescript
 import { useZustandStore, useUser } from '@/state/zustand';
 
