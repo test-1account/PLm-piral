@@ -46,7 +46,7 @@ const initialState: ZustandAppState = {
 // Create Zustand store
 export const useZustandStore = create<ZustandStore>()(
   devtools(
-    subscribeWithSelector((set, get) => ({
+    subscribeWithSelector((set, _get) => ({
       // State
       ...initialState,
 

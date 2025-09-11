@@ -12,7 +12,7 @@ import {
 // Mock localStorage
 const mockLocalStorage = () => {
   let store: Record<string, string> = {};
-  
+
   return {
     getItem: (key: string) => store[key] || null,
     setItem: (key: string, value: string) => {
@@ -32,7 +32,8 @@ Object.defineProperty(window, 'localStorage', {
 });
 
 // Sample JWT token for testing (expires in year 2030)
-const mockToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwibmFtZSI6IkpvaG4gRG9lIiwicm9sZXMiOlsiYWRtaW4iLCJ1c2VyIl0sImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxODkzNDU2MDAwfQ.invalid-signature-for-testing';
+const mockToken =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwibmFtZSI6IkpvaG4gRG9lIiwicm9sZXMiOlsiYWRtaW4iLCJ1c2VyIl0sImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxODkzNDU2MDAwfQ.invalid-signature-for-testing';
 
 describe('JWT utilities', () => {
   beforeEach(() => {
@@ -86,7 +87,7 @@ describe('JWT utilities', () => {
     test('should get current user from valid token', () => {
       setToken(mockToken);
       const user = getCurrentUser();
-      
+
       expect(user).toBeTruthy();
       expect(user?.id).toBe('1234567890');
       expect(user?.email).toBe('test@example.com');
@@ -103,7 +104,7 @@ describe('JWT utilities', () => {
   describe('Role checking', () => {
     test('should check user roles correctly', () => {
       setToken(mockToken);
-      
+
       expect(hasRole('admin')).toBe(true);
       expect(hasRole('user')).toBe(true);
       expect(hasRole('guest')).toBe(false);

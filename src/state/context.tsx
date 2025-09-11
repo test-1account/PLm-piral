@@ -43,16 +43,16 @@ function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
     case 'SET_USER':
       return { ...state, user: action.payload };
-    
+
     case 'SET_LOADING':
       return { ...state, isLoading: action.payload };
-    
+
     case 'TOGGLE_THEME':
       return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
-    
+
     case 'TOGGLE_SIDEBAR':
       return { ...state, sidebarOpen: !state.sidebarOpen };
-    
+
     case 'ADD_NOTIFICATION':
       return {
         ...state,
@@ -65,7 +65,7 @@ function appReducer(state: AppState, action: AppAction): AppState {
           },
         ],
       };
-    
+
     case 'REMOVE_NOTIFICATION':
       return {
         ...state,
@@ -73,10 +73,10 @@ function appReducer(state: AppState, action: AppAction): AppState {
           (notification) => notification.id !== action.payload
         ),
       };
-    
+
     case 'CLEAR_NOTIFICATIONS':
       return { ...state, notifications: [] };
-    
+
     default:
       return state;
   }
@@ -98,11 +98,7 @@ interface AppProviderProps {
 export function AppProvider({ children }: AppProviderProps) {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  return (
-    <AppContext.Provider value={{ state, dispatch }}>
-      {children}
-    </AppContext.Provider>
-  );
+  return <AppContext.Provider value={{ state, dispatch }}>{children}</AppContext.Provider>;
 }
 
 // Custom hook to use the context

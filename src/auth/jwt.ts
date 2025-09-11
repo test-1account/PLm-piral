@@ -37,6 +37,7 @@ export function decodeToken(token: string): JWTPayload | null {
     const decoded = atob(payload);
     return JSON.parse(decoded);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error decoding JWT token:', error);
     return null;
   }
@@ -46,7 +47,7 @@ export function decodeToken(token: string): JWTPayload | null {
 export function isTokenExpired(token: string): boolean {
   const decoded = decodeToken(token);
   if (!decoded) return true;
-  
+
   return Date.now() >= decoded.exp * 1000;
 }
 
@@ -56,15 +57,15 @@ export function getCurrentUser(): User | null {
   if (!token || isTokenExpired(token)) {
     return null;
   }
-  
+
   const decoded = decodeToken(token);
   if (!decoded) return null;
-  
+
   return {
     id: decoded.sub,
     email: decoded.email,
     name: decoded.name,
-    roles: decoded.roles
+    roles: decoded.roles,
   };
 }
 

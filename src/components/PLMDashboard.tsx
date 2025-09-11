@@ -16,11 +16,26 @@ export const PLMDashboard: React.FC<PLMDashboardProps> = ({ userRole = 'user' })
         </span>
       </header>
 
-      <div style={{ marginTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+      <div
+        style={{
+          marginTop: '20px',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '20px',
+        }}
+      >
         <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px' }}>
           <h3>Product Management</h3>
           <p>Manage product information, specifications, and lifecycle stages.</p>
-          <button style={{ background: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px' }}>
+          <button
+            style={{
+              background: '#1976d2',
+              color: 'white',
+              border: 'none',
+              padding: '8px 16px',
+              borderRadius: '4px',
+            }}
+          >
             View Products
           </button>
         </div>
@@ -28,7 +43,15 @@ export const PLMDashboard: React.FC<PLMDashboardProps> = ({ userRole = 'user' })
         <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px' }}>
           <h3>Document Control</h3>
           <p>Manage engineering documents, drawings, and specifications.</p>
-          <button style={{ background: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px' }}>
+          <button
+            style={{
+              background: '#1976d2',
+              color: 'white',
+              border: 'none',
+              padding: '8px 16px',
+              borderRadius: '4px',
+            }}
+          >
             View Documents
           </button>
         </div>
@@ -36,7 +59,15 @@ export const PLMDashboard: React.FC<PLMDashboardProps> = ({ userRole = 'user' })
         <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px' }}>
           <h3>Change Management</h3>
           <p>Track and manage engineering change orders and approvals.</p>
-          <button style={{ background: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px' }}>
+          <button
+            style={{
+              background: '#1976d2',
+              color: 'white',
+              border: 'none',
+              padding: '8px 16px',
+              borderRadius: '4px',
+            }}
+          >
             View Changes
           </button>
         </div>
@@ -44,13 +75,23 @@ export const PLMDashboard: React.FC<PLMDashboardProps> = ({ userRole = 'user' })
         <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px' }}>
           <h3>Collaboration</h3>
           <p>Team collaboration tools and project management.</p>
-          <button style={{ background: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px' }}>
+          <button
+            style={{
+              background: '#1976d2',
+              color: 'white',
+              border: 'none',
+              padding: '8px 16px',
+              borderRadius: '4px',
+            }}
+          >
             View Projects
           </button>
         </div>
       </div>
 
-      <div style={{ marginTop: '30px', padding: '16px', background: '#f5f5f5', borderRadius: '8px' }}>
+      <div
+        style={{ marginTop: '30px', padding: '16px', background: '#f5f5f5', borderRadius: '8px' }}
+      >
         <h3>Recent Activity</h3>
         <ul style={{ margin: 0, paddingLeft: '20px' }}>
           <li>Product XYZ-123 specifications updated</li>

@@ -44,7 +44,10 @@ const appSlice = createSlice({
     toggleSidebar: (state) => {
       state.sidebarOpen = !state.sidebarOpen;
     },
-    addNotification: (state, action: PayloadAction<Omit<ReduxNotification, 'id' | 'timestamp'>>) => {
+    addNotification: (
+      state,
+      action: PayloadAction<Omit<ReduxNotification, 'id' | 'timestamp'>>
+    ) => {
       state.notifications.push({
         ...action.payload,
         id: Date.now().toString(),

@@ -24,12 +24,9 @@ export const queryClient = new QueryClient({
 export const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
 
 // Generic fetch function with JWT auth
-export async function apiRequest<T>(
-  endpoint: string,
-  options: RequestInit = {}
-): Promise<T> {
+export async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const token = getToken();
-  
+
   const config: RequestInit = {
     headers: {
       'Content-Type': 'application/json',
