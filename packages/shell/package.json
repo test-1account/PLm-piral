@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "PLM Shell Application - Piral Instance",
   "main": "dist/index.js",
+  "types": "index.ts",
   "app": "src/index.tsx",
   "scripts": {
     "start": "piral debug",
@@ -13,22 +14,29 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.0.0",
     "piral": "^0.15.0",
     "piral-cli": "^0.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@tanstack/react-query": "^5.0.0",
     "react-router-dom": "^6.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "typescript": "^5.0.0",
-    "eslint": "^8.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.0",
+    "@types/jest": "^29.0.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.0.0",
-    "rimraf": "^5.0.0"
+    "jest-environment-jsdom": "^29.0.0",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
   },
   "piral": {
     "name": "plm-shell",
@@ -36,5 +44,22 @@
     "bundler": {
       "type": "webpack5"
     }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)$": ["ts-jest", {
+        "tsconfig": {
+          "jsx": "react-jsx",
+          "strict": false
+        }
+      }]
+    },
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }

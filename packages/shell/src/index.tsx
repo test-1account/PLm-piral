@@ -1,13 +1,22 @@
-import { renderInstance } from 'piral';
-import { layout, errors } from './layout';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { layout } from './layout';
 
-// Render the Piral instance
-renderInstance({
-  layout,
-  errors,
-  requestPilets() {
-    // In production, this would fetch pilets from a feed service
-    // For development, we'll register them manually
-    return Promise.resolve([]);
-  },
-});
+// Simple shell implementation for demo purposes
+// In production, this would use full Piral with renderInstance
+
+const App = () => {
+  return layout({ 
+    children: (
+      <div>
+        <h2>Welcome to PLM System</h2>
+        <p>This is a demo of the microfrontend shell.</p>
+        <p>Individual MFEs would be loaded here dynamically.</p>
+      </div>
+    )
+  });
+};
+
+// Render the shell
+const root = ReactDOM.createRoot(document.getElementById('app')!);
+root.render(<App />);
