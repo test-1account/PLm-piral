@@ -14,6 +14,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@plm/design-system": "file:../design-system",
     "@tanstack/react-query": "^5.0.0",
     "piral": "^0.15.0",
     "piral-cli": "^0.15.0",

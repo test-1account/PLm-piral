@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Card, Badge, colors, spacing } from '@plm/design-system';
 
 interface Product {
   id: string;
@@ -55,18 +56,18 @@ export const ProductManagementPage: React.FC = () => {
       product.category.toLowerCase().includes(filter.toLowerCase())
   );
 
-  const getStatusColor = (status: Product['status']) => {
+  const getStatusVariant = (status: Product['status']): 'default' | 'success' | 'warning' | 'info' | 'error' => {
     switch (status) {
       case 'Production':
-        return '#4caf50';
+        return 'success';
       case 'Testing':
-        return '#ff9800';
+        return 'warning';
       case 'Development':
-        return '#2196f3';
+        return 'info';
       case 'Discontinued':
-        return '#f44336';
+        return 'error';
       default:
-        return '#666';
+        return 'default';
     }
   };
 
@@ -80,19 +81,10 @@ export const ProductManagementPage: React.FC = () => {
           alignItems: 'center',
         }}
       >
-        <h1 style={{ margin: 0, color: '#1976d2' }}>Product Management</h1>
-        <button
-          style={{
-            background: '#1976d2',
-            color: 'white',
-            border: 'none',
-            padding: '10px 20px',
-            borderRadius: '6px',
-            cursor: 'pointer',
-          }}
-        >
+        <h1 style={{ margin: 0, color: colors.primary[500] }}>Product Management</h1>
+        <Button variant="primary">
           + New Product
-        </button>
+        </Button>
       </div>
 
       {/* Search and Filter */}
@@ -176,19 +168,10 @@ export const ProductManagementPage: React.FC = () => {
                       </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <span
-                        style={{
-                          background: getStatusColor(product.status),
-                          color: 'white',
-                          padding: '4px 8px',
-                          borderRadius: '12px',
-                          fontSize: '12px',
-                          fontWeight: 500,
-                        }}
-                      >
+                      <Badge variant={getStatusVariant(product.status)} size="sm">
                         {product.status}
-                      </span>
-                      <div style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
+                      </Badge>
+                      <div style={{ fontSize: '12px', color: colors.gray[600], marginTop: spacing.xs }}>
                         Modified: {new Date(product.lastModified).toLocaleDateString()}
                       </div>
                     </div>
@@ -234,20 +217,12 @@ export const ProductManagementPage: React.FC = () => {
             </div>
             <div style={{ padding: '20px' }}>
               <div style={{ marginBottom: '16px' }}>
-                <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', color: '#333' }}>
+                <h3 style={{ margin: '0 0 8px 0', fontSize: '20px', color: colors.text.primary }}>
                   {selectedProduct.name}
                 </h3>
-                <span
-                  style={{
-                    background: getStatusColor(selectedProduct.status),
-                    color: 'white',
-                    padding: '4px 12px',
-                    borderRadius: '16px',
-                    fontSize: '14px',
-                  }}
-                >
+                <Badge variant={getStatusVariant(selectedProduct.status)}>
                   {selectedProduct.status}
-                </span>
+                </Badge>
               </div>
 
               <div style={{ marginBottom: '20px' }}>

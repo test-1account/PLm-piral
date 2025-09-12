@@ -1,0 +1,44 @@
+{
+  "name": "@plm/design-system",
+  "version": "1.0.0",
+  "description": "PLM Design System - Shared design tokens and components",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "react",
+    "typescript",
+    "plm"
+  ],
+  "author": "PLM Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0",
+    "@storybook/addon-essentials": "^7.6.0",
+    "@storybook/addon-interactions": "^7.6.0",
+    "@storybook/addon-links": "^7.6.0",
+    "@storybook/blocks": "^7.6.0",
+    "@storybook/react": "^7.6.0",
+    "@storybook/react-vite": "^7.6.0",
+    "@storybook/testing-library": "^0.2.2",
+    "storybook": "^7.6.0"
+  }
+}
