@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Button } from './Button';
 
-const meta = {
+export default {
   title: 'Components/Button',
   component: Button,
   parameters: {
@@ -21,54 +21,51 @@ const meta = {
       control: { type: 'boolean' },
     },
   },
-} satisfies Meta<typeof Button>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Primary: Story = {
+export const Primary = {
   args: {
     children: 'Primary Button',
     variant: 'primary',
   },
 };
 
-export const Secondary: Story = {
+export const Secondary = {
   args: {
     children: 'Secondary Button',
     variant: 'secondary',
   },
 };
 
-export const Outline: Story = {
+export const Outline = {
   args: {
     children: 'Outline Button',
     variant: 'outline',
   },
 };
 
-export const Ghost: Story = {
+export const Ghost = {
   args: {
     children: 'Ghost Button',
     variant: 'ghost',
   },
 };
 
-export const Small: Story = {
+export const Small = {
   args: {
     children: 'Small Button',
     size: 'sm',
   },
 };
 
-export const Large: Story = {
+export const Large = {
   args: {
     children: 'Large Button',
     size: 'lg',
   },
 };
 
-export const Disabled: Story = {
+export const Disabled = {
   args: {
     children: 'Disabled Button',
     disabled: true,

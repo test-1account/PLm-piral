@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Badge } from './Badge';
 
-const meta = {
+export default {
   title: 'Components/Badge',
   component: Badge,
   parameters: {
@@ -18,53 +18,50 @@ const meta = {
       options: ['sm', 'md'],
     },
   },
-} satisfies Meta<typeof Badge>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default = {
   args: {
     children: 'Default',
   },
 };
 
-export const Success: Story = {
+export const Success = {
   args: {
     children: 'Approved',
     variant: 'success',
   },
 };
 
-export const Warning: Story = {
+export const Warning = {
   args: {
     children: 'Under Review',
     variant: 'warning',
   },
 };
 
-export const Error: Story = {
+export const Error = {
   args: {
     children: 'Rejected',
     variant: 'error',
   },
 };
 
-export const Info: Story = {
+export const Info = {
   args: {
     children: 'Rev C',
     variant: 'info',
   },
 };
 
-export const Small: Story = {
+export const Small = {
   args: {
     children: 'Small Badge',
     size: 'sm',
   },
 };
 
-export const PLMStatusExamples: Story = {
+export const PLMStatusExamples = {
   render: () => (
     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
       <Badge variant="success">Active</Badge>

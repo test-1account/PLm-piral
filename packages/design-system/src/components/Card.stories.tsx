@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Card } from './Card';
 import { Button } from './Button';
 import { Badge } from './Badge';
 
-const meta = {
+export default {
   title: 'Components/Card',
   component: Card,
   parameters: {
@@ -20,12 +20,9 @@ const meta = {
       options: ['sm', 'md', 'lg'],
     },
   },
-} satisfies Meta<typeof Card>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default = {
   args: {
     children: (
       <div>
@@ -43,7 +40,7 @@ export const Default: Story = {
   },
 };
 
-export const Elevated: Story = {
+export const Elevated = {
   args: {
     variant: 'elevated',
     children: (
@@ -58,7 +55,7 @@ export const Elevated: Story = {
   },
 };
 
-export const Outlined: Story = {
+export const Outlined = {
   args: {
     variant: 'outlined',
     children: (
