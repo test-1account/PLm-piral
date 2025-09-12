@@ -1,0 +1,28 @@
+{
+  "name": "plm-piral-workspace",
+  "version": "1.0.0",
+  "description": "PLM Microfrontend Workspace with Piral",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "install:all": "npm install",
+    "build:all": "npm run build --workspaces",
+    "start:shell": "npm run start --workspace=packages/shell",
+    "build:shell": "npm run build --workspace=packages/shell",
+    "start:product-mfe": "npm run start --workspace=packages/product-management-mfe",
+    "start:document-mfe": "npm run start --workspace=packages/document-control-mfe",
+    "start:change-mfe": "npm run start --workspace=packages/change-management-mfe",
+    "start:collaboration-mfe": "npm run start --workspace=packages/collaboration-mfe",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "clean": "npm run clean --workspaces"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

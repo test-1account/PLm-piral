@@ -1,0 +1,40 @@
+{
+  "name": "plm-shell",
+  "version": "1.0.0",
+  "description": "PLM Shell Application - Piral Instance",
+  "main": "dist/index.js",
+  "app": "src/index.tsx",
+  "scripts": {
+    "start": "piral debug",
+    "build": "piral build",
+    "serve": "piral serve",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "piral": "^0.15.0",
+    "piral-cli": "^0.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@tanstack/react-query": "^5.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "jest": "^29.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "piral": {
+    "name": "plm-shell",
+    "tooling": "webpack5",
+    "bundler": {
+      "type": "webpack5"
+    }
+  }
+}
