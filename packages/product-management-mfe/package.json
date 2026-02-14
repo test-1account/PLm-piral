@@ -1,0 +1,38 @@
+{
+  "name": "product-management-mfe",
+  "version": "1.0.0",
+  "description": "Product Management Microfrontend for PLM System",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "pilet debug --target plm-shell",
+    "build": "pilet build",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@plm/design-system": "file:../design-system",
+    "@tanstack/react-query": "^5.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "piral-cli": "^0.15.0",
+    "plm-shell": "1.0.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "piral": {
+    "name": "product-management-mfe",
+    "tooling": "webpack5",
+    "piralInstances": {
+      "plm-shell": "../shell"
+    }
+  }
+}
